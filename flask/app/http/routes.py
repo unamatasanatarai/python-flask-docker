@@ -1,9 +1,9 @@
-from app import app
+from app.http import app
 from flask import Flask, Response, request
 from html import escape
 from json import dumps
 from os.path import dirname
-from view import render
+from app.view import render
 
 def getLinks():
     return [
