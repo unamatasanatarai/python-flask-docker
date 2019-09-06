@@ -1,0 +1,50 @@
+{% from "macros.html" import nav_link with context %}<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}ping pong{% endblock %}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+
+  <meta name="theme-color" content="#bada55">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">SuP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            {{ nav_link('index', url_for("index"), 'Home') }}
+            {{ nav_link('json', url_for("json"), 'Json') }}
+            {{ nav_link('text', url_for("text"), 'Pure page') }}
+            {{ nav_link('textinput', url_for("textinput", input="from-url-bar"), 'Url Fragment') }}
+            {{ nav_link('textinputand', url_for("textinputand", input="from-url-bar", then="query-string"), 'Url fragment and qury') }}
+        </ul>
+      </div>
+    </nav>
+  <main role="main" class="container">
+
+      <div class="starter-template">
+      	{% block content %}
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        {% endblock %}
+      </div>
+
+    </main>
+
+    <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+</body>
+</html>
